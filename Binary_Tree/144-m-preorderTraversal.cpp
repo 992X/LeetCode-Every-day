@@ -17,6 +17,7 @@ public:
         preTraversal(root, v);
         return v;
     }
+    
     void preTraversal(TreeNode* root, vector<int>& v) {
         if(!root)
             return;

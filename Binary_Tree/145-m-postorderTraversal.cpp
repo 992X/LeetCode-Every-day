@@ -12,17 +12,17 @@ struct TreeNode {
  
 class Solution {
 public:
-    vector<int> inorderTraversal(TreeNode* root) {
+    vector<int> postorderTraversal(TreeNode* root) {
         vector<int> v;
-        inTraversal(root, v);
+        postTraversal(root, v);
         return v;
     }
     
-    void inTraversal(TreeNode* root, vector<int>& v) {
-        if (!root)
+    void postTraversal(TreeNode* root, vector<int>& v) {
+        if(!root)
             return;
-        inTraversal(root->left, v);
+        postTraversal(root->left, v);
+        postTraversal(root->right, v);
         v.push_back(root->val);
-        inTraversal(root->right, v);
     }
 };
